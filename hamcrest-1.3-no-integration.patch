@@ -1,0 +1,33 @@
+diff --git a/build.xml b/build.xml
+index c59c9fa..e5eaa56 100644
+--- a/build.xml
++++ b/build.xml
+@@ -112,7 +112,7 @@
+                                 build/hamcrest-integration-${version}.jar"/>
+     </target>
+ 
+-    <target name="bigjar" depends="core, library, integration, generator"
++    <target name="bigjar" depends="core, library, generator"
+             description="Build a single Jar (hamcrest-all.jar) that contains core, library, generator and integration.">
+         <mkdir dir="build/temp/hamcrest-all-${version}.jar.manifest"/>
+         <manifest file="build/temp/hamcrest-all-${version}.jar.manifest/MANIFEST.MF">
+@@ -132,7 +132,6 @@
+             <zipfileset src="build/hamcrest-core-${version}-sources.jar"/>
+             <zipfileset src="build/hamcrest-library-${version}-sources.jar"/>
+             <zipfileset src="build/hamcrest-generator-${version}-sources.jar"/>
+-            <zipfileset src="build/hamcrest-integration-${version}-sources.jar"/>
+         </jar>
+     </target>
+ 
+@@ -146,11 +145,6 @@
+         <javadoc packagenames="org.hamcrest.*" defaultexcludes="yes"
+                  destdir="build/temp/hamcrest-all-${version}-javadoc.jar.contents" author="true" version="true" use="true"
+                  windowtitle="Hamcrest" source="1.6" failonerror="yes">
+-            <classpath>
+-                <fileset dir="lib/integration">
+-                    <include name="*.jar"/>
+-                </fileset>
+-            </classpath>
+             <packageset dir="build/temp/hamcrest-core-${version}-sources.jar.contents"/>
+             <packageset dir="build/temp/hamcrest-library-${version}-sources.jar.contents" excludes="org/hamcrest/internal"/>
+             <packageset dir="build/temp/hamcrest-integration-${version}-sources.jar.contents"/>
