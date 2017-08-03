@@ -33,7 +33,7 @@
 
 Name:           %{?scl_prefix}hamcrest
 Version:        1.3
-Release:        20.1%{?dist}
+Release:        20.2%{?dist}
 Epoch:          0
 Summary:        Library of matchers for building test expressions
 License:        BSD
@@ -190,6 +190,9 @@ cp -pr %{pkg_name}-examples $RPM_BUILD_ROOT%{_datadir}/%{pkg_name}/
 %{_datadir}/%{pkg_name}
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 0:1.3-20.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 0:1.3-20.1
 - Automated package import and SCL-ization
 
